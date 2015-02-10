@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>Seattle Backyard Birding</title>
 
 
     <!-- compiled css output -->
@@ -16,23 +16,28 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+    <script src="app/app.js"></script>
+
+    <!--services-->
+    <script src="app/services/wiki.service.js"></script>  
+    <script src="app/services/storedData.service.js"></script> 
+
+<!--     <script src="app/services/logger.js"></script> 
+ -->     
+
+    <!--controllers-->
+    <script src="app/sorter/sorter.controller.js"></script>
+
+    <script src="app/sorter/sorter.size.controller.js"></script>
+    <script src="app/sorter/sorter.color.controller.js"></script>
+     <script src="app/sorter/sorter.behavior.controller.js"></script>
+    <script src="app/sorter/sorter.results.controller.js"></script>
+    <script src="app/allbirds/allbirds.controller.js"></script>
+
   </head>
-  <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
+      <body ng-app="birdApp">
+
     <ion-nav-view></ion-nav-view>
-  </body>
+      
+   </body>
 </html>
