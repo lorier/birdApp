@@ -1,7 +1,12 @@
-<ion-view title="'vm.title'">
+<ion-view title="Bird Sorter :: Behavior">
 	<ion-content class="has-header">
  		<p on-swipe-left="vm.onSwipeLeft">This is the behavior.html.</p>
-		<a ng-click="vm.goToResults()" class="button">Go to results</a>
+ 		<ion-list>
+ 			<ion-item ng-repeat="item in vm.behaviorOptions">				
+				<ion-checkbox ng-checked="vm.selectedBehaviors.indexOf(item) > -1" ng-click="vm.toggleSelection(item)" ng-model="isChecked" value="{{item}}">{{item}}</ion-checkbox>
+ 			</ion-item>	
+ 		</ion-list>
+		<a ng-click="vm.seeResults()" class="button">Go to results</a>
 	</ion-content>
 </ion-view>
 

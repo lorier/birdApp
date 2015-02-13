@@ -15,24 +15,26 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
+    <!-- external libraries -->
+    <script src="lib/lodash/lodash.min.js"></script>
+
     <script src="app/app.js"></script>
 
     <!--services-->
     <script src="app/services/wiki.service.js"></script>  
-    <script src="app/services/storedData.service.js"></script> 
+    <script src="app/services/storedSelections.service.js"></script> 
 
 <!--     <script src="app/services/logger.js"></script> 
  -->     
 
     <!--controllers-->
     <script src="app/sorter/sorter.controller.js"></script>
-
     <script src="app/sorter/sorter.size.controller.js"></script>
     <script src="app/sorter/sorter.color.controller.js"></script>
      <script src="app/sorter/sorter.behavior.controller.js"></script>
     <script src="app/sorter/sorter.results.controller.js"></script>
     <script src="app/allbirds/allbirds.controller.js"></script>
+    <script src="app/birddetail/bird.detail.controller.js"></script>
 
   </head>
       <body ng-app="birdApp">

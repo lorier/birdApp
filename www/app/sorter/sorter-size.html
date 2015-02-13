@@ -1,6 +1,11 @@
-<ion-view title="Bird Sorter">
+<ion-view title="Bird Sorter :: Size">
 	<ion-content class="has-header">
-		<p>This is the sorter-size.html</p>
+		<p>How big was it?</p>
+		<ion-list>
+ 			<ion-item ng-repeat="item in vm.sizeOptions">				
+				<ion-radio ng-checked="vm.selectedSizes.indexOf(item) > -1" ng-click="vm.toggleSelection(item)" ng-model="isChecked" value="{{item}}">{{item}}</ion-checkbox>
+ 			</ion-item>	
+ 		</ion-list>
 		<a ng-click="vm.goToBehavior()" class="button">Go to Behavior</a>
 	</ion-content>
 </ion-view>

@@ -3,23 +3,46 @@
 
     angular
         .module('birdApp')
-        .controller('SorterBehaviorCtrl', ['$state', SorterBehaviorCtrl]);
+        .controller('SorterBehaviorCtrl', SorterBehaviorCtrl);
 
     /* @ngInject */
-    SorterBehaviorCtrl.$inject=['$state'];
+    SorterBehaviorCtrl.$inject=['$state', 'selectionData'];
 
-    function SorterBehaviorCtrl($state) {
+    function SorterBehaviorCtrl($state, selectionData) {
         /*jshint validthis: true */
-        console.log('sorter color controller called');
+        console.log('sorter behavior controller called');
         var vm = this;
-        vm.title = 'Sort by Behavior';
-        vm.goToResults = goToResults;
+        //temporary data store
+        vm.behaviorOptions = ["Perching", "Wading", "Clinging", "Soaring", "Walking", "Hovering"];
+        vm.seeResults = seeResults;
+        vm.selectedBehaviors = selectionData.getBehaviors();
+        vm.toggleSelection = toggleSelection;
         
-        function goToResults(e){
-            console.log('Button Clicked!');
+        //TODO 
+        //test selections
+        //  -can't include tiny and huge
+        //  - what happens if they do?
+        
+        function toggleSelection(item) {
+            var idx = vm.selectedBehaviors.indexOf(item);
+             // is currently selected
+             if (idx > -1) {
+               vm.selectedBehaviors.splice(idx, 1);
+             }
+             // is newly selected
+             else {
+               vm.selectedBehaviors.push(item);
+             }
+             console.log(vm.selectedBehaviors);
+
+             selectionData.setBehaviors(vm.selectedBehaviors);
+           }
+
+        function seeResults() {
+            console.log('sorter button clicked!');
             $state.go('home.sorterresults');
+
         }
-        function activate() {
-        }
+     
     }
 })();

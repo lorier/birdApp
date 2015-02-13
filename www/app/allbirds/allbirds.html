@@ -1,6 +1,11 @@
 <ion-view title="All Birds">
 	<ion-content class="has-header">
-		<p>This is the allbirds.html</p>
+	<p>Here are all birds in the Seattle Area</p>
+ 		<ion-list>
+ 			<ion-item ng-repeat="item in vm.birdData"  ui-sref="home.birddetail( { id: item._id, name: item.commonName} )" >	
+				{{item.commonName}}
+ 			</ion-item>	
+ 		</ion-list>
 	</ion-content>
 </ion-view>
 

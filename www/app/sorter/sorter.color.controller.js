@@ -13,7 +13,7 @@
         var vm = this;
         vm.goToSize = goToSize;
         vm.toggleSelection = toggleSelection;
-        vm.selectedColors = [];
+        vm.selectedColors = selectionData.getColors();
 
         //TO DO place the expanded version of this in a service
         vm.colorOptions = ["Reds", "Yellows", "Greens", "Blues", "Black", "Gray", "White", "Other", "Not Sure"];
@@ -30,7 +30,7 @@
              else {
                vm.selectedColors.push(item);
              }
-             console.log(vm.selectedColors);
+             console.log("Selected colors: " + vm.selectedColors);
 
              selectionData.setColors(vm.selectedColors);
            }
@@ -42,7 +42,6 @@
         
         //Temporary nav 
         function goToSize(e){
-            console.log('Button Clicked!');
             $state.go('home.sortersize');
         }
         

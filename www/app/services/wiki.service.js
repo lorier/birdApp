@@ -6,14 +6,15 @@
         .factory('wikiApi', wikiApi);
     /* @ngInject */
     
-    wikiApi.$inject = ['$http', '$q', '$ionicLoading', 'logger'];
-
-    function wikiApi($http, $q, $ionicLoading, logger) {
+    wikiApi.$inject = ['$http', '$q', '$ionicLoading'];
+    
+    //TODO Revise later with structure defined here:
+    //https://github.com/johnpapa/angularjs-styleguide#resolving-promises-for-a-controller
+    function wikiApi($http, $q, $ionicLoading) {
        return {
-            birdData: birdData
+            getBirdData: getBirdData
         };
-        
-        function birdData(callback) {
+        function getBirdData(callback) {
             return $http.get('http://dev.ransomdesign.com/birdData/fakeData.json')
                 .success(function(data){
                     callback(data);

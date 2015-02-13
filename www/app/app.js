@@ -50,7 +50,8 @@
       .state('home', {
         // abstract: true,
         url: '/home',
-        templateUrl: 'app/home/home.html'
+        templateUrl: 'app/home/home.html',
+        controller: 'SorterCtrl as vm'
       })
       .state('home.sorter', {
         url: '/sorter-color',
@@ -96,6 +97,25 @@
               controller: 'AllBirdsCtrl as vm'
             }
           }
+      })
+      //https://github.com/rclayton/NG-Communicate-Ctrls/tree/master/router
+      //https://rclayton.silvrback.com/passing-state-via-routes
+       .state('home.birddetail', {
+          url: '/birddetail/:name:id',
+          resolve: {
+            name: function($stateParams) {
+               return $stateParams.name;
+              },
+            id: function($stateParams) {
+              return $stateParams.id;
+            }
+          },
+          views: {
+              'allbirds':{
+                templateUrl: 'app/birddetail/bird-detail.html',
+                controller: 'BirdDetailCtrl as vm'
+              }
+            }
       });
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/home/all-birds');
