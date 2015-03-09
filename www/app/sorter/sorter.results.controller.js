@@ -10,14 +10,9 @@
 
     function SorterResultsCtrl($state, selectionData, birdMatcher) {
         /*jshint validthis: true */
-        console.log('sorter results controller called');
         var vm = this;
-        
-        console.log("Final selected colors: " + selectionData.getColors());
-        console.log("Final selected sizes: " + selectionData.getSizes());
-        console.log("Final selected behaviors: " + selectionData.getBehaviors());
-        
-        console.log
+        console.log("Here is the matched data: " + birdMatcher.getMatchedData());
+        // console.log
         //Pseudocode
         //
         //on instantiation

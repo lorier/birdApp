@@ -1,6 +1,10 @@
 <ion-view title="Bird Sorter :: Size">
 	<ion-content class="has-header">
-		<p>How big was it?</p>
+	<div class="step-visual"></div>
+	<div class="heading">
+		<h2>How big was it?</h2>
+ 		<p>Choose one.</p>
+ 	</div>
 		<ion-list>
  			<ion-item ng-repeat="item in vm.sizeOptions">				
 				<ion-radio ng-checked="vm.selectedSizes.indexOf(item) > -1" ng-click="vm.toggleSelection(item)" ng-model="isChecked" value="{{item}}">{{item}}</ion-checkbox>

@@ -21,16 +21,17 @@
         }
 
         function getAllBirds(){
-        	return allBirds = wikiApi.getAllBirds()
+        	return wikiApi.getBirdData();
         }
 
         function getMatchedData(){
         	var allBirds = getAllBirds();
         	var selectedColors = getSelectedColors;
 
-        	var matchFred = _.matchesProperty('user', 'fred');
-			_.find(users, matchFred);
+   //      	var matchFred = _.matchesProperty('user', 'fred');
+			// _.find(users, matchFred);
 
+			console.log("Here are the selected Colors from the matching service: " + selectedColors());
 			//pseudocode
 			//
 			//Overall strategy:
@@ -55,6 +56,9 @@
 			// 
 			// General thoughts: can I do real -time filtering on the controllers
 			// with the built in Angular Filter directive?
+			// -  articles I've read don't necessarily like the built in filter with angular
+			// 
+			// Possiblilites: http://devdocs.io/lodash/index#filter
         }
     }
 })();

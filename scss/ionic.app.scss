@@ -3,17 +3,17 @@ To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
-
+*/
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
+$calm:                            #82786e !default;
 $balanced:                        #33cd5f !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
+$dark:                            #544747 !default;
+
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -21,3 +21,68 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+/* LR Adding Roboto Font */
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../lib/ionic/fonts/RobotoLight.eot');
+    src: url('../lib/ionic/fonts/RobotoLight.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/RobotoLight.woff2') format('woff2'),
+         url('../lib/ionic/fonts/RobotoLight.woff') format('woff'),
+         url('../lib/ionic/fonts/RobotoLight.ttf') format('truetype'),
+         url('../lib/ionic/fonts/RobotoLight.svg#RobotoLight') format('svg');
+}
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('fonts/RobotoRegular.eot');
+    src: url('fonts/RobotoRegular.eot') format('embedded-opentype'),
+         url('fonts/RobotoRegular.woff2') format('woff2'),
+         url('fonts/RobotoRegular.woff') format('woff'),
+         url('fonts/RobotoRegular.ttf') format('truetype'),
+         url('fonts/RobotoRegular.svg#RobotoRegular') format('svg');
+}
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('fonts/RobotoMedium.eot');
+    src: url('fonts/RobotoMedium.eot') format('embedded-opentype'),
+         url('fonts/RobotoMedium.woff2') format('woff2'),
+         url('fonts/RobotoMedium.woff') format('woff'),
+         url('fonts/RobotoMedium.ttf') format('truetype'),
+         url('fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+}
+
+/* LR custom colors */
+$orange: 		#f39c08;
+$cream: 		#F1ECCB;
+$green:			#B9B24B;
+
+/*LR SASS Styles */
+.bar.bar-dark .title {
+	color: $orange;
+}
+h1, h2, h3, p, li, a {
+	color: #675959;
+	font-family: 'RobotoLight';
+}
+.pane, .item-content {
+	background-color: $cream !important;
+}
+.item {
+	border-color: #969696;
+	color: #675959;
+	background-color: $cream;
+}
+.ion-item {
+	background-color: $cream;
+}
+.item-checkbox,
+.item-radio {
+	border: none;
+}
+.heading {
+	text-align: center;
+	padding: 20px 0;
+}
+.step-visual {
+	background-color: $green;
+	height: 20px;
+}

@@ -1,6 +1,10 @@
 <ion-view title="Bird Sorter :: Color">
 	<ion-content>
- 		<p>What colors did you see?.</p>
+	<div class="step-visual"></div>
+ 	<div class="heading">
+		<h2>What colors did you see?</h2>
+ 		<p>Choose many.</p>
+ 	</div>
  		<ion-list>
  			<ion-item ng-repeat="item in vm.colorOptions">				
 				<ion-checkbox ng-checked="vm.selectedColors.indexOf(item) > -1" ng-click="vm.toggleSelection(item)" ng-model="isChecked" value="{{item}}">{{item}}</ion-checkbox>
